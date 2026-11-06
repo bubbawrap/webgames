@@ -1,0 +1,87 @@
+/* Keep content height independent of the host frame's allocated height. */
+:root {
+  color-scheme: dark;
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+  color: #f6f7ff;
+  background: #06091a;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  --ink: #f6f7ff;
+  --muted: #b8c2de;
+  --lime: #d1ff65;
+  --line: #2d3a60;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { display: flow-root; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+a:focus-visible { outline: 3px solid var(--lime); outline-offset: 5px; }
+img { display: block; max-width: 100%; }
+h1, h2, p { margin: 0; }
+::selection { background: var(--lime); color: #06091a; }
+
+.about { width: 100%; max-width: 760px; margin-inline: auto; overflow: clip; }
+.masthead { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 26px; color: #131e3d; border-bottom: 2px solid #4f5c85; background: linear-gradient(180deg, #f4f7ff 0%, #c5cee1 44%, #a6b4cc 47%, #e8edfb 100%); }
+.wordmark { font-family: "Chakra Petch", Arial, sans-serif; font-size: 22px; font-weight: 700; font-style: italic; letter-spacing: -1px; text-shadow: 0 1px #fff; }
+.wordmark span { color: #273fb0; padding-inline: 1px; }
+.masthead-note { display: inline-flex; align-items: center; gap: 10px; font-family: "Chakra Petch", Arial, sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.masthead-note span { font-size: 24px; line-height: 1; }
+
+.hero { background: #080f29; }
+.hero-art { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #0c1d46; }
+.hero-art img { width: 100%; height: 100%; object-fit: cover; }
+.hero-art::after { content: ""; pointer-events: none; position: absolute; inset: auto 0 0; height: 56px; background: linear-gradient(transparent, #080f29); }
+.hero-copy { position: relative; padding: 4px 30px 32px; }
+.eyebrow { display: flex; align-items: center; gap: 8px; color: #b3c7f8; font-family: "Chakra Petch", Arial, sans-serif; font-size: 10px; font-weight: 600; line-height: 1.5; text-transform: uppercase; letter-spacing: 1.35px; }
+.pixel-star { color: var(--lime); font-size: 16px; }
+h1 { margin-top: 12px; font-family: "Chakra Petch", Arial, sans-serif; font-size: clamp(42px, 10vw, 64px); line-height: 1.02; letter-spacing: -2.8px; font-weight: 700; font-style: italic; text-transform: uppercase; }
+h1 span { color: var(--lime); }
+.intro { margin-top: 20px; max-width: 470px; color: #c1cbe4; font-size: 15px; line-height: 1.7; letter-spacing: -.1px; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 25px; margin-top: 25px; }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 49px; padding: 14px 18px; border: 1px solid #ecffbc; border-radius: 3px; font-family: "Chakra Petch", Arial, sans-serif; font-size: 14px; line-height: 1.2; font-weight: 700; transition: background-color 140ms ease, color 140ms ease; }
+.button-primary { color: #172303; background: var(--lime); box-shadow: 3px 3px 0 #496120; }
+.button-primary:hover { background: #e3ff9f; }
+.button span, .text-link span, .share-link span { font-size: 20px; line-height: 1; font-weight: 400; }
+.text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 10px; font-size: 12px; font-weight: 500; color: #e2e8ff; }
+.text-link:hover { color: var(--lime); }
+
+.share { position: relative; margin: 0 30px; padding: 25px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 55px minmax(0, 1fr); gap: 18px; }
+.share-icon { width: 55px; height: 55px; display: grid; place-items: center; color: #d4def4; border: 1px solid #7486b4; border-radius: 9px; background: linear-gradient(140deg, #3a4a7b, #101b3b); box-shadow: inset 1px 1px 0 #6577a7, 3px 3px 0 #020510; transform: rotate(-6deg); }
+.share h2 { font-family: "Chakra Petch", Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; letter-spacing: -.6px; }
+.share p { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.share-link { display: inline-flex; align-items: center; gap: 12px; margin-top: 6px; min-height: 44px; font-size: 13px; font-weight: 600; color: var(--lime); }
+.share-link:hover { color: #e3ff9f; text-decoration: underline; text-underline-offset: 4px; }
+.footer { margin: 0 30px; padding: 16px 0 19px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 15px; font-family: "Chakra Petch", Arial, sans-serif; font-size: 10px; line-height: 1.5; color: #9eaccd; border-top: 1px solid var(--line); }
+.footer a { min-height: 36px; display: inline-flex; align-items: center; gap: 6px; }
+.footer a:hover { color: var(--lime); }
+
+@media (max-width: 430px) {
+  .masthead { padding: 15px 20px; }
+  .wordmark { font-size: 21px; }
+  .masthead-note { font-size: 9px; letter-spacing: .7px; gap: 8px; }
+  .hero-copy { padding: 4px 22px 28px; }
+  .eyebrow { font-size: 9px; letter-spacing: 1.1px; }
+  h1 { font-size: clamp(34px, 10.6vw, 46px); letter-spacing: -1.7px; }
+  .intro { font-size: 14px; margin-top: 17px; line-height: 1.7; }
+  .desktop-break { display: none; }
+  .hero-actions { gap: 8px 17px; margin-top: 22px; }
+  .button { padding-inline: 13px; gap: 17px; font-size: 13px; }
+  .text-link { font-size: 11px; gap: 5px; }
+  .share { margin-inline: 22px; grid-template-columns: 45px minmax(0, 1fr); gap: 14px; padding-block: 24px 19px; }
+  .share-icon { width: 45px; height: 45px; }
+  .share-icon svg { width: 33px; height: 33px; }
+  .share h2 { font-size: 21px; }
+  .share p { font-size: 13px; }
+  .footer { margin-inline: 22px; font-size: 9px; }
+}
+
+@media (max-width: 340px) {
+  .hero-actions { align-items: stretch; flex-direction: column; gap: 7px; }
+  .hero-actions .text-link { justify-content: center; }
+  .masthead-note { letter-spacing: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
