@@ -42,7 +42,6 @@ h1 span { color: var(--lime); }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 49px; padding: 14px 18px; border: 1px solid #ecffbc; border-radius: 3px; font-family: "Chakra Petch", Arial, sans-serif; font-size: 14px; line-height: 1.2; font-weight: 700; transition: background-color 140ms ease, color 140ms ease; }
 .button-primary { color: #172303; background: var(--lime); box-shadow: 3px 3px 0 #496120; }
 .button-primary:hover { background: #e3ff9f; }
-.button span, .text-link span, .share-link span { font-size: 20px; line-height: 1; font-weight: 400; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 10px; font-size: 12px; font-weight: 500; color: #e2e8ff; }
 .text-link:hover { color: var(--lime); }
 
